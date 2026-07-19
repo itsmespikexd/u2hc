@@ -1,9 +1,7 @@
 # UltraUltraHardcore
 
-## Setup
+old ass stupid mod that adds some hard restriction to minecraft from the time i was learning fabric modding that i put on here just because. and no i wont fix any more bugs. 
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+have fun playing if u decide to get this garbage onto your computer.
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+note: only for 1.21.1 
