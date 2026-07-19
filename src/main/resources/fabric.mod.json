@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "u2hc",
+	"version": "1.0.4",
+	"name": "UltraUltraHardcore",
+	"description": "Makes the game harder. Have fun!",
+	"authors": [
+		"ItsMeSpike"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/u2hc"
+	},
+	"license": "MIT",
+	"icon": "assets/u2hc/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.u2hc.U2HCMod"
+		],
+		"client": [
+			"com.u2hc.U2HCClient"
+		],
+		"modmenu": ["com.u2hc.config.ModMenuIntegration"]
+	},
+	"mixins": [
+		"u2hc.mixins.json",
+		{
+			"config": "u2hc.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

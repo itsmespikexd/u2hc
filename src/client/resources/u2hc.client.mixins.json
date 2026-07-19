@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.u2hc.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"KeyboardMixin",
+		"InputMixin",
+		"ClientInputMixin",
+		"CreateWorldScreenMixin"
+	],
+	"injectors": { "defaultRequire": 1 }
+}
