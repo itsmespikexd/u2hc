@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(KeyboardInput.class)
 public class InputMixin {
     @Inject(method = "tick", at = @At("TAIL"))
-    private void rule1_3_4_HardBlock(boolean slowDown, float slowDownFactor, CallbackInfo ci) {
+    private void hardBlockInput(boolean slowDown, float slowDownFactor, CallbackInfo ci) {
         Input input = (Input) (Object) this;
         if (U2HCMod.ACTIVE_CONFIG == null) return;
 

@@ -16,12 +16,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EnderDragonMixin {
 
     @Inject(method = "tickDeath", at = @At("HEAD"))
-    private void rule30_immediateWin(CallbackInfo ci) {
+    private void win(CallbackInfo ci) {
         EnderDragon dragon = (EnderDragon)(Object)this;
 
         if (dragon.level() instanceof ServerLevel serverLevel && !U2HCMod.isComplete) {
             U2HCMod.isComplete = true;
-
             U2HCState.frozenTicks = serverLevel.getGameTime();
             U2HCState.frozenDeaths = U2HCState.deathCount;
             U2HCState.fireworkTimer = 300;

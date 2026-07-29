@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(KeyboardHandler.class)
 public class KeyboardMixin {
     @Inject(method = "handleDebugKeys", at = @At("HEAD"), cancellable = true)
-    private void rule5_disableF3(int key, CallbackInfoReturnable<Boolean> cir) {
+    private void disableF3(int key, CallbackInfoReturnable<Boolean> cir) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.noF3) {
             cir.setReturnValue(true);
         }

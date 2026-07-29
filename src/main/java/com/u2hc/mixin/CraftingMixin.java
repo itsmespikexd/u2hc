@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public class CraftingMixin {
 
     @ModifyVariable(method = "setItem", at = @At("HEAD"), argsOnly = true)
-    private ItemStack rule20_stopUtilityCrafting(ItemStack stack) {
+    private ItemStack stopUtilityCrafting(ItemStack stack) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.blockUtilityCrafting) {
             if (stack.is(Items.FURNACE) ||
                 stack.is(Items.ENCHANTING_TABLE) ||

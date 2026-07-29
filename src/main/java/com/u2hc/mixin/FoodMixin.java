@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public class FoodMixin {
 
     @ModifyVariable(method = "add(IF)V", at = @At("HEAD"), argsOnly = true, ordinal = 0)
-    private int rule11_halveNutritionParam(int nutrition) {
+    private int halveNutrition(int nutrition) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.foodHalved) {
             return nutrition / 2;
         }
@@ -18,7 +18,7 @@ public class FoodMixin {
     }
 
     @ModifyVariable(method = "add(IF)V", at = @At("HEAD"), argsOnly = true, ordinal = 0)
-    private float rule11_halveSaturationParam(float saturation) {
+    private float halveSaturation(float saturation) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.foodHalved) {
             return saturation / 2.0f;
         }

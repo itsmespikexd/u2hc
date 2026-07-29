@@ -15,14 +15,14 @@ public class ClientInputMixin {
     @Shadow public Screen screen;
 
     @Inject(method = "startAttack", at = @At("HEAD"), cancellable = true)
-    private void rule2_stopAttackHead(CallbackInfoReturnable<Boolean> cir) {
+    private void stopAttackHead(CallbackInfoReturnable<Boolean> cir) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.noLeftClick && this.screen == null) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "continueAttack", at = @At("HEAD"), cancellable = true)
-    private void rule2_stopMiningHead(boolean leftClick, CallbackInfo ci) {
+    private void stopMiningHead(boolean leftClick, CallbackInfo ci) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.noLeftClick && this.screen == null) {
             ci.cancel();
         }

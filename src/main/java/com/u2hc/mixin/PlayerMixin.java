@@ -15,12 +15,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PlayerMixin {
 
     @Inject(method = "tick", at = @At("TAIL"))
-    private void rule30_fireworkTicker(CallbackInfo ci) {
+    private void fireworkTicker(CallbackInfo ci) {
         ServerPlayer p = (ServerPlayer)(Object)this;
         if (!p.level().isClientSide && U2HCState.fireworkTimer > 0) {
             if (U2HCState.fireworkTimer % 2 == 0) {
                 for (int i = 0; i < 3; i++) {
-                    double offsetX = (p.getRandom().nextFloat() * 10.0) - 5.0; // 10 block wide spread
+                    double offsetX = (p.getRandom().nextFloat() * 10.0) - 5.0;
                     double offsetZ = (p.getRandom().nextFloat() * 10.0) - 5.0;
                     double offsetY = p.getRandom().nextFloat() * 2.0;
 

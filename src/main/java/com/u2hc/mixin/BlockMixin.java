@@ -17,7 +17,7 @@ public class BlockMixin {
     @Inject(method = "popResource(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V",
             at = @At("HEAD"),
             cancellable = true)
-    private static void rule22_AtomicThirdRate(Level level, BlockPos pos, ItemStack stack, CallbackInfo ci) {
+    private static void explosion(Level level, BlockPos pos, ItemStack stack, CallbackInfo ci) {
 
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.globalExplosionDropRate && U2HCState.IS_EXPLODING.get()) {
 

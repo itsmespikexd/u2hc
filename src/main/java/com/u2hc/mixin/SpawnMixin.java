@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MobCategory.class)
 public class SpawnMixin {
     @Inject(method = "getMaxInstancesPerChunk", at = @At("RETURN"), cancellable = true)
-    private void rule7_tripleMobCap(CallbackInfoReturnable<Integer> cir) {
+    private void higherMobCap(CallbackInfoReturnable<Integer> cir) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.increasedSpawnRate) {
             if ((Object)this == MobCategory.MONSTER) {
                 if (U2HCState.currentDimension != Level.END) {

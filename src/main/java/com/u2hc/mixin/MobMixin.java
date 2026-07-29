@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MobMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
-    private void rule12_13_Multipliers(EntityType<? extends Mob> type, net.minecraft.world.level.Level level, CallbackInfo ci) {
+    private void buffMultipliers(EntityType<? extends Mob> type, net.minecraft.world.level.Level level, CallbackInfo ci) {
         Mob mob = (Mob)(Object)this;
         if (U2HCMod.ACTIVE_CONFIG == null) return;
 
@@ -41,7 +41,7 @@ public abstract class MobMixin {
             method = "populateDefaultEquipmentSlots",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/DifficultyInstance;getSpecialMultiplier()F")
     )
-    private float rule17_forceMaxDifficulty(DifficultyInstance instance) {
+    private float forceMaxDifficulty(DifficultyInstance instance) {
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.highArmorChance) {
             return 1.0F;
         }
@@ -52,7 +52,7 @@ public abstract class MobMixin {
             method = "populateDefaultEquipmentSlots",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/util/RandomSource;nextFloat()F", ordinal = 0)
     )
-    private float rule17_ninetyPercentArmor(RandomSource random) {
+    private float ninetyPercentArmor(RandomSource random) {
         float roll = random.nextFloat();
         if (U2HCMod.ACTIVE_CONFIG != null && U2HCMod.ACTIVE_CONFIG.highArmorChance) {
 
