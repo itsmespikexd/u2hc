@@ -28,10 +28,9 @@ public abstract class CraftingMixin {
                     .ifPresent(slot -> {
                         ItemStack result = slot.getItem();
                         if (!result.isEmpty()) {
-                            if (result.is(Items.CRAFTING_TABLE) ||
-                                    result.is(Items.FURNACE) ||
-                                    result.is(Items.ENCHANTING_TABLE) ||
-                                    result.is(Items.BREWING_STAND)) {
+                            if (result.is(Items.FURNACE) ||
+                                result.is(Items.ENCHANTING_TABLE) ||
+                                result.is(Items.BREWING_STAND)) {
 
                                 slot.set(ItemStack.EMPTY);
                             }
